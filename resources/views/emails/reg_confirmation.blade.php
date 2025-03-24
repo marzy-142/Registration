@@ -9,5 +9,12 @@
 <body>
     <h2>Welcome, {{ $user->name }}!</h2>
     <p>Thank you for registering on our platform. We're excited to have you!</p>
+
+    <p>
+        Click below to get started:
+    </p>
+    <p>
+        <a href="{{ $loginLink }}">Login to your account</a>
+    </p>
 </body>
 </html>

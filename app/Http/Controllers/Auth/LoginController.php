@@ -31,13 +31,13 @@ class LoginController extends Controller
             'password' => 'required|min:6',
         ]);
 
-        // Attempt to log in the user with the provided credentials
+     
         if (Auth::attempt($request->only('email', 'password'))) {
-            // Authentication was successful, redirect the user
-            return redirect()->intended('/');  // Redirect to the intended page or home page
+           
+            return redirect()->intended('/dashboard');  // Redirect to the intended page or home page
         }
 
-        // Authentication failed
+     
         return back()->withErrors([
             'email' => 'These credentials do not match our records.',
         ]);

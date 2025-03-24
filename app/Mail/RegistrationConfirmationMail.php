@@ -30,7 +30,13 @@ class RegistrationConfirmationMail extends Mailable
      */
     public function build()
     {
+        $loginLink = route('auth.magic.login', ['user' => $this->user->id, 'signature' => sha1($this->user->email . config('app.key'))]);
+    
         return $this->view('emails.reg_confirmation')
-                    ->with(['user' => $this->user]);
+                    ->with([
+                        'user' => $this->user,
+                        'loginLink' => $loginLink
+                    ]);
     }
+    
 }
