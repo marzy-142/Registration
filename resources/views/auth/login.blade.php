@@ -9,7 +9,7 @@
 <body>
     <h1>Login to Your Account</h1>
 
-    <form action="{{ route('login') }}" method="POST">
+    <form action="{{ route('login.post') }}" method="POST">
         @csrf
         <div>
             <label for="email">Email:</label>
@@ -24,7 +24,7 @@
         <button type="submit">Login</button>
     </form>
 
-
+    <a href="{{ route('password.request') }}">Forgot Password?</a>
     <a href="{{ route('register') }}">Don't have an account? Register here</a>
 </body>
 </html>
